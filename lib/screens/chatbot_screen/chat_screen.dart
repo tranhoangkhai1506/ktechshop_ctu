@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:ktechshop/constants/constants.dart';
 import 'package:ktechshop/constants/routes.dart';
 import 'package:ktechshop/screens/chatbot_screen/chat_mesage_type.dart';
 import 'package:ktechshop/screens/chatbot_screen/chat_mesage_widget.dart';
@@ -15,27 +16,31 @@ class ChatScreen extends StatefulWidget {
 }
 
 Future<String> generateResponse(String prompt) async {
-  const apiKey = ""; // Tạo Key ở platform.openai rồi thêm vào.
-  var url = Uri.https("api.openai.com", "/v1/completions");
+  const apiKey = ""; // Thêm OpenAI API Key của bạn vào đây.
+  var url = Uri.https("api.openai.com", "/v1/chat/completions");
   final response = await http.post(
     url,
     headers: {
       "Content-Type": "application/json",
-      "Authorization": "Bearer $apiKey"
+      "Authorization": "Bearer $apiKey",
     },
     body: json.encode({
-      "model": "text-davinci-003",
-      "prompt": prompt,
-      "temperature": 1,
-      "max_tokens": 4000,
-      "top_p": 1,
-      "frequency_penalty": 0.0,
-      "presence_penalty": 0.0
+      "model": "gpt-4o", // Thay đổi model theo yêu cầu
+      "messages": [
+        {"role": "user", "content": prompt}
+      ]
     }),
   );
 
-  Map<String, dynamic> newresponse = jsonDecode(response.body);
-  return newresponse['choices'][0]['text'];
+  // Kiểm tra nếu request thành công
+  if (response.statusCode == 200) {
+    Map<String, dynamic> jsonResponse = jsonDecode(response.body);
+    String assistantMessage = jsonResponse['choices'][0]['message']['content'];
+    return assistantMessage;
+  } else {
+    showMessage('Failed to generate response: ${response.statusCode}');
+    return 'Failed to generate response: ${response.statusCode}';
+  }
 }
 
 class _ChatScreenState extends State<ChatScreen> {
@@ -57,14 +62,22 @@ class _ChatScreenState extends State<ChatScreen> {
   void initState() {
     super.initState();
     isLoading = false;
-    pageController.dispose();
+    pageController = PageController(
+        viewportFraction: 0.8); // Khởi tạo PageController trong initState
+  }
+
+  @override
+  void dispose() {
+    pageController.dispose(); // Hủy PageController trong dispose
+    _scrollController.dispose(); // Hủy ScrollController nếu cần
+    super.dispose();
   }
 
   void _scrollDown() {
     _scrollController.animateTo(
       _scrollController.position.maxScrollExtent,
       duration: const Duration(milliseconds: 300),
-      curve: Curves.easeOut,
+      curve: Curves.bounceIn,
     );
   }
 
