@@ -137,7 +137,7 @@ class _HomeState extends State<Home> {
                             Column(
                               children: const [
                                 TopTitles(
-                                  title: 'KQH Shop',
+                                  title: 'King Tech :D',
                                   subTitle: '',
                                 ),
                               ],

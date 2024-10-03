@@ -13,8 +13,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Stripe.publishableKey =
       // "pk_test_51NcQH0CizuobP5vV9ZC0fDWT25Or9yeykFi2i5JXqARUstruauJWUMJqSDUIz2OxQj8vV1fa0Ytmolnmltx1xl1s00bihWFCpt";
-       "pk_test_51PIZ4eRwJpc3iA5fJnDJz7i3nvRtRoY0TPJDPLPDE1U94B4pKHzVPON7ZjuehlaIGuLEKeMBOSG3P676zZMsy7cE00ZlWZsooJ";
- 
+      "pk_test_51PIZ4eRwJpc3iA5fJnDJz7i3nvRtRoY0TPJDPLPDE1U94B4pKHzVPON7ZjuehlaIGuLEKeMBOSG3P676zZMsy7cE00ZlWZsooJ";
+
   await Firebase.initializeApp(
     options: DefaultFirebaseConfig.platformOptions,
   );

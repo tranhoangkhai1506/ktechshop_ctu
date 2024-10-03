@@ -79,7 +79,7 @@ class _CheckCurrentLocationScreen extends State<CheckCurrentLocationScreen> {
                     ),
                     // ignore: avoid_unnecessary_containers
                     SizedBox(
-                      height: 60,
+                      height: 140,
                       width: 250,
                       child: Column(
                         children: [
@@ -136,7 +136,7 @@ class _CheckCurrentLocationScreen extends State<CheckCurrentLocationScreen> {
                         }),
                     Icon(Icons.paypal_rounded),
                     SizedBox(
-                      height: 60,
+                      height: 140,
                       width: 250,
                       child: Column(
                         children: [

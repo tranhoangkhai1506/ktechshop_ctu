@@ -81,7 +81,7 @@ class _SingleCheckCurrentLocationScreen
                     ),
                     // ignore: avoid_unnecessary_containers
                     SizedBox(
-                      height: 60,
+                      height: 140,
                       width: 250,
                       child: Column(
                         children: [
