@@ -130,6 +130,15 @@ class _ProductDetailsState extends State<ProductDetails> {
                         child: Icon(Icons.add),
                       ),
                     ),
+                    Spacer(),
+                    Text(
+                      '\$${widget.singleProduct.price}',
+                      style:
+                          TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      width: kDefaultPadding,
+                    ),
                   ],
                 ),
                 SizedBox(

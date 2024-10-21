@@ -124,8 +124,16 @@ class FirebaseFirestoreHelper {
           .map((element) => OrderModel.fromJson(element.data()))
           .toList();
 
+      // Sort in descending order by date string converted to DateTime
+      orderList.sort((a, b) {
+        DateTime dateA = DateTime.parse(a.dateOrder!);
+        DateTime dateB = DateTime.parse(b.dateOrder!);
+        return dateB.compareTo(dateA); // Descending order
+      });
+
       return orderList;
     } catch (e) {
+      print('Error fetching orders: $e');
       return [];
     }
   }
@@ -142,9 +150,16 @@ class FirebaseFirestoreHelper {
       List<OrderModel> orderList = querySnapshot.docs
           .map((element) => OrderModel.fromJson(element.data()))
           .toList();
+
       List<OrderModel> completedOrderList = orderList
           .where((element) => element.status.contains("Completed"))
           .toList();
+
+      completedOrderList.sort((a, b) {
+        DateTime dateA = DateTime.parse(a.dateOrder!);
+        DateTime dateB = DateTime.parse(b.dateOrder!);
+        return dateB.compareTo(dateA); // Descending order
+      });
       return completedOrderList;
     } catch (e) {
       return [];
@@ -372,7 +387,8 @@ class FirebaseFirestoreHelper {
         .map((element) => ProductModel.fromJson(element.data()))
         .toList();
 
-    Map<String, Map<String, double>> productRatingsMap = {};
+    Map<String, Map<String, double>> productRatingsMap =
+        {}; // ma trận {User;Item} value là điểm đánh giá ban đầu từ 0 đến 5
 
     for (var rating in ratingList) {
       if (rating.rating != "0.0" && rating.rating.isNotEmpty) {

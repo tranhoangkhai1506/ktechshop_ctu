@@ -52,11 +52,11 @@ class _ChatScreenState extends State<ChatScreen> {
   late bool isLoading;
 
   final List<String> pageTexts = [
-    'Suggest some high-end laptops for office use?',
-    'Suggest some gaming laptops in the price range of 20 to 25 million?',
-    'Suggest some good mechanical keyboard models?',
-    'Suggest some good headphone models?',
-    'Suggest for me laptop to work?',
+    'Đưa ra điện thoại Iphone mới nhất?',
+    'Gợi ý cho tôi 2 loại bàn phím gaming tốt nhất',
+    'Gợi ý cho tôi tai nghe gaming',
+    'Gợi ý cho tôi các loại sạc 20W',
+    'Gợi ý cho tôi điện thoại trên 20 triệu',
   ];
 
   @override
@@ -87,7 +87,7 @@ class _ChatScreenState extends State<ChatScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "ChatBot Tư Vấn",
+          "King-Tech",
           style: TextStyle(color: Colors.white),
         ),
         elevation: 0,
