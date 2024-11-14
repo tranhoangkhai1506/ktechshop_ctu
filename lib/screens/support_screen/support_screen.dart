@@ -32,12 +32,12 @@ class SupportScreen extends StatelessWidget {
           SizedBox(
             height: kDefaultPadding,
           ),
-          Text("Email: ktech.support@gmail.com",
+          Text("Email: kingtech.support@gmail.com",
               style: TextStyle(fontSize: 20, color: Colors.black)),
           SizedBox(
             height: kDefaultPadding,
           ),
-          Text("Hotline: 0987654321",
+          Text("Hotline: 0704874653",
               style: TextStyle(fontSize: 20, color: Colors.black)),
         ],
       )),

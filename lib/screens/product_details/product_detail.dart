@@ -56,7 +56,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      widget.singleProduct.name,
+                      widget.singleProduct.name.toUpperCase(),
                       style:
                           TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                     ),

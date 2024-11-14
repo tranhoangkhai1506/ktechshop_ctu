@@ -24,7 +24,7 @@ class AboutScreen extends StatelessWidget {
               height: 200,
               width: 300,
               child: Image.asset(AssetsImages.instance.ktechLogo)),
-          Text("K-Tech",
+          Text("King-Tech",
               style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -32,7 +32,7 @@ class AboutScreen extends StatelessWidget {
           SizedBox(
             height: kDefaultPadding,
           ),
-          Text("Owner: Kaaka",
+          Text("Owner: Mã Nguyễn Phước Bình B2003821",
               style: TextStyle(fontSize: 20, color: Colors.black)),
         ],
       )),

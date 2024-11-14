@@ -106,6 +106,7 @@ class _SingleCheckCurrentLocationScreen
                                 ),
                                 overflow: TextOverflow.ellipsis,
                                 maxLines: 2,
+                                textAlign: TextAlign.center,
                               ),
                             ],
                           ),
@@ -138,7 +139,7 @@ class _SingleCheckCurrentLocationScreen
                         }),
                     Icon(Icons.paypal_rounded),
                     SizedBox(
-                      height: 60,
+                      height: 140,
                       width: 250,
                       child: Column(
                         children: [
@@ -153,6 +154,7 @@ class _SingleCheckCurrentLocationScreen
                                 ),
                                 overflow: TextOverflow.ellipsis,
                                 maxLines: 2,
+                                textAlign: TextAlign.center,
                               ),
                               Text(
                                 // ignore: unnecessary_string_interpolations

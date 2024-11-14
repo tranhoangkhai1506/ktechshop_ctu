@@ -33,7 +33,7 @@ class _SignUpState extends State<SignUp> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TopTitles(
-                title: 'Create Account', subTitle: 'Welcome To K-Tech Shop'),
+                title: 'Create Account', subTitle: 'Welcome To King-Tech Shop'),
             SizedBox(
               height: kDefaultPadding * 1.5,
             ),

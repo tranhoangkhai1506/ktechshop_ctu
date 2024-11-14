@@ -35,7 +35,7 @@ class _MyAppState extends State<MyApp> {
     return ChangeNotifierProvider(
       create: (context) => AppProvider(),
       child: MaterialApp(
-        title: 'K-Tech',
+        title: 'King-Tech',
         home: StreamBuilder(
             stream: FirebaseAuthHelper.instance.getAuthChange,
             builder: (context, snapshot) {

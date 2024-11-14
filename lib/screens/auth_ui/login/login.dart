@@ -30,7 +30,8 @@ class _LoginState extends State<Login> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TopTitles(title: 'Login', subTitle: 'Welcome Back To K-Tech Shop'),
+            TopTitles(
+                title: 'Login', subTitle: 'Welcome Back To King-Tech Shop'),
             SizedBox(
               height: kDefaultPadding * 1.5,
             ),

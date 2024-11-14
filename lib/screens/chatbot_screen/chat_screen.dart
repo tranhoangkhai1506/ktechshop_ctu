@@ -16,8 +16,7 @@ class ChatScreen extends StatefulWidget {
 }
 
 Future<String> generateResponse(String prompt) async {
-  const apiKey =
-      ""; // Thêm OpenAI API Key của bạn vào đây.
+  const apiKey = ""; // Thêm OpenAI API Key của bạn vào đây.
   var url = Uri.https("api.openai.com", "/v1/chat/completions");
   final response = await http.post(
     url,
@@ -52,11 +51,11 @@ class _ChatScreenState extends State<ChatScreen> {
   late bool isLoading;
 
   final List<String> pageTexts = [
-    'Đưa ra điện thoại Iphone mới nhất?',
-    'Gợi ý cho tôi 2 loại bàn phím gaming tốt nhất',
-    'Gợi ý cho tôi tai nghe gaming',
-    'Gợi ý cho tôi các loại sạc 20W',
-    'Gợi ý cho tôi điện thoại trên 20 triệu',
+    'Suggest some high-end laptops for office use?',
+    'Suggest some gaming laptops in the price range of 20 to 25 million?',
+    'Suggest some good mechanical keyboard models?',
+    'Suggest some good headphone models?',
+    'Suggest for me laptop to work?',
   ];
 
   @override
