@@ -124,7 +124,7 @@ class _LoginState extends State<Login> {
             SizedBox(
               height: kDefaultPadding * 1.5,
             ),
-            Center(child: Text('Don`t not have an account?')),
+            Center(child: Text('Do not have an account?')),
             Center(
                 child: CupertinoButton(
                     onPressed: () {

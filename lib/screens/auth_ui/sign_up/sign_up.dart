@@ -158,7 +158,7 @@ class _SignUpState extends State<SignUp> {
             SizedBox(
               height: kDefaultPadding * 1.5,
             ),
-            Center(child: Text('I have already an account!')),
+            Center(child: Text('I already have an account!')),
             Center(
                 child: CupertinoButton(
                     onPressed: () {
