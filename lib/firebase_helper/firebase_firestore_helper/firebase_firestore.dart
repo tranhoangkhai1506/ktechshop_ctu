@@ -559,14 +559,14 @@ class FirebaseFirestoreHelper {
       }
     }
 
-// Print for debugging before sorting
+    // Print for debugging before sorting
     print("Before Sorting and Selecting Top k:");
     for (var entry in usersAndSimilarities) {
       print(
           'User index: ${entry['index']}, Similarity: ${entry['similarity']}');
     }
 
-// Step 2: Sort by similarity in descending order and take top k nearest neighbors
+    // Step 2: Sort by similarity in descending order and take top k nearest neighbors
     usersAndSimilarities
         .sort((a, b) => b['similarity'].compareTo(a['similarity']));
     List<Map<String, dynamic>> nearestNeighbors =

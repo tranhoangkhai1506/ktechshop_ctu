@@ -146,6 +146,8 @@ class _CartItemCheckOut extends State<CartItemCheckOut> {
               ),
               PrimaryButton(
                   onPressed: () async {
+                    appProvider.clearCart();
+
                     if (groupValue == 1) {
                       bool value = await FirebaseFirestoreHelper.instance
                           .uploadOrderProductFirebase(
@@ -170,13 +172,13 @@ class _CartItemCheckOut extends State<CartItemCheckOut> {
                       appProvider.clearBuyProduct();
                     } else {
                       await EmailSender.sendEmail(
-                          name: appProvider.getUserInformation.name,
-                          email: appProvider.getUserInformation.email,
-                          subject: "KQH SHOP",
-                          message: "${orderDetail(productModel)}"
-                              "Địa chỉ giao hàng: ${appProvider.getUserInformation.address}.\n\n"
-                              "Cảm ơn bạn đã mua hàng.",
-                        );
+                        name: appProvider.getUserInformation.name,
+                        email: appProvider.getUserInformation.email,
+                        subject: "KQH SHOP",
+                        message: "${orderDetail(productModel)}"
+                            "Địa chỉ giao hàng: ${appProvider.getUserInformation.address}.\n\n"
+                            "Cảm ơn bạn đã mua hàng.",
+                      );
                       int value = double.parse(
                               appProvider.totalPriceBuyProduct().toString())
                           .round()

@@ -74,7 +74,7 @@ class _SingleCartItemState extends State<SingleCartItem> {
                                 onPressed: () {
                                   if (qty > 0) {
                                     setState(() {
-                                      qty--;
+                                      qty > 1 ? qty-- : qty = 1;
                                     });
                                     appProvider.updateQuantity(
                                         widget.singleProduct, qty);

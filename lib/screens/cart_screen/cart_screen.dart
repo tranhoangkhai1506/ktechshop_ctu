@@ -47,12 +47,11 @@ class _CartScreenState extends State<CartScreen> {
               ),
               PrimaryButton(
                   onPressed: () {
-                    appProvider.clearBuyProduct();
                     appProvider.addBuyProductCart();
-                    appProvider.clearCart();
                     if (appProvider.getBuyProductList.isEmpty) {
                       showMessage("Cart is empty");
                     } else {
+                      //appProvider.clearBuyProduct();
                       Routes.instance.push(
                           widget: CheckCurrentLocationScreen(),
                           context: context);

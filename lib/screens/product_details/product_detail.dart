@@ -97,7 +97,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                       onPressed: () {
                         if (qty > 0) {
                           setState(() {
-                            qty--;
+                            qty > 1 ? qty-- : qty = 1;
                             priceTotal = widget.singleProduct.price * qty;
                           });
                         }
